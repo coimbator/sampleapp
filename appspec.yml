@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+files:
+  - source: index.html
+    destination: /var/www/html
+  - source: styles.css
+    destination: /var/www/html
+  - source: script.js
+    destination: /var/www/html
+hooks:
+  BeforeInstall:
+    - location: Scripts/install_dependencies.sh
+      runas: root
+  AfterInstall:
+    - location: Scripts/start_server.sh
+      runas: root
+  ApplicationStop:
+    - location: Scripts/stop_server.sh
+      runas: root

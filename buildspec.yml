@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+    install:
+        commands:
+            - yum update -y
+            - yum install -y httpd
+    pre_build:
+        commands:
+            - echo "Starting the Apache Server"
+            - /usr/sbin/httpd -k start
+
+    build:
+        commands:
+            - echo "Build phase - Nothing to build for a static website."
+    post_build:
+        commands:
+            - echo "Running the HTML File in Apache Server"
+artifacts:
+    files: '**/*'
+    base-directory: './'

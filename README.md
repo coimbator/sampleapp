@@ -1,0 +1,1 @@
+These files are used to deploy a Sample web application using CodeCommit, CodeBuild, CodeDeploy and Orchestrated with CodePipline in AWS.
